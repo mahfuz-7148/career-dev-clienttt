@@ -3,7 +3,7 @@ import Banner from '../Components/Banner.jsx';
 import HotJobs from '../Components/HotJobs.jsx';
 import axios from 'axios';
 
-const jobsPromise = axios.get(`${import.meta.env.VITE_SERVER}/jobs`)
+const jobsPromise = axios.get(`https://career-dev-serverrr.vercel.app/jobs`)
     .then(res => res.data)
 const Home = () => {
     return (

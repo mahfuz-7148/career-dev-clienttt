@@ -24,7 +24,7 @@ const JobApply = () => {
             resume
         }
 
-        axios.post(`${import.meta.env.VITE_SERVER}/applications/`, application)
+        axios.post(`https://career-dev-serverrr.vercel.app/applications/`, application)
             .then(res => {
                 console.log(res.data)
 

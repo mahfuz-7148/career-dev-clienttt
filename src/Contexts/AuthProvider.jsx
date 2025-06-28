@@ -31,7 +31,7 @@ const AuthProvider = ({children}) => {
             setSaveUser(currentUser)
             setLoading(false)
             if (currentUser?.email) {
-                axios.post(`${import.meta.env.VITE_SERVER}/jwt`, {
+                axios.post(`https://career-dev-serverrr.vercel.app/jwt`, {
                     email: currentUser?.email
                 },{withCredentials: true})
                     .then(res => console.log(res?.data)

@@ -20,7 +20,7 @@ const AddJob = () => {
 
         console.log(newJob)
 
-        axios.post(`${import.meta.env.VITE_SERVER}/jobs`, newJob)
+        axios.post(`https://career-dev-serverrr.vercel.app/jobs`, newJob)
             .then(res => {
                 console.log(res.data)
 

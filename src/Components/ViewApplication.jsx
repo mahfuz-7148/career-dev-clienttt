@@ -4,7 +4,7 @@ import {useQuery} from '@tanstack/react-query';
 
 
 const applicationDetails = async id => {
-    const response = await axios.get(`${import.meta.env.VITE_SERVER}/applications/job/${id}`)
+    const response = await axios.get(`https://career-dev-serverrr.vercel.app/applications/job/${id}`)
     return response.data
 }
 
@@ -19,7 +19,7 @@ const ViewApplication = () => {
     const statusChange = (e, app_id) => {
         console.log(e.target.value, app_id)
 
-        axios.patch(`${import.meta.env.VITE_SERVER}/applications/${app_id}`, {
+        axios.patch(`https://career-dev-serverrr.vercel.app/applications/${app_id}`, {
             status: e.target.value
         })
             .then(res => res.data)
