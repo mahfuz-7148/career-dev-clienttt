@@ -5,7 +5,9 @@ import ApplicationList from './ApplicationList.jsx';
 import axios from 'axios';
 
 const applicationPromise = email => {
-    return axios.get(`${import.meta.env.VITE_SERVER}/applications?email=${email}`)
+    return axios.get(`${import.meta.env.VITE_SERVER}/applications?email=${email}`, {
+        withCredentials: true
+    })
         .then(res => res.data)
 
 }
