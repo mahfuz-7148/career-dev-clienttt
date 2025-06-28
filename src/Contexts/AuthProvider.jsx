@@ -30,15 +30,14 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setSaveUser(currentUser)
             setLoading(false)
-            if (currentUser?.email){
-                axios.post('http://localhost:3000/jwt', {
+            if (currentUser?.email) {
+                axios.post(`${import.meta.env.VITE_SERVER}/jwt`, {
                     email: currentUser?.email
-                }, {withCredentials: true})
+                },{withCredentials: true})
                     .then(res => console.log(res?.data)
                     )
-                    .catch(error => {
-                        console.log(error)
-                    })
+                    .catch(err => console.log(err)
+                    )
             }
             console.log(currentUser)
 

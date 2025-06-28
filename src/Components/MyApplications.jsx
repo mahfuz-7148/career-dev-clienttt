@@ -9,7 +9,6 @@ const applicationPromise = email => {
         withCredentials: true
     })
         .then(res => res.data)
-
 }
 
 const MyApplications = () => {
