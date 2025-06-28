@@ -10,8 +10,7 @@ const applicationPromise = (email, accessToken) => {
         headers: {
             authorization: `Bearer ${accessToken}`
         }
-    })
-        .then(res => res.data)
+    }).then(res => res.data)
 }
 
 const MyApplications = () => {
