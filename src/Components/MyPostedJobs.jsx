@@ -5,7 +5,7 @@ import JobLists from './JobLists.jsx';
 
 
 const jobsPromise = email => {
-    return axios.get(`https://career-dev-clienttt.vercel.app/jobs/applications?email=${email}`)
+    return axios.get(`https://career-dev-server.vercel.app/jobs/applications?email=${email}`)
         .then(res => res.data)
 }
 

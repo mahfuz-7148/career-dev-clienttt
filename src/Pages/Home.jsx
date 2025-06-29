@@ -3,7 +3,7 @@ import Banner from '../Components/Banner.jsx';
 import HotJobs from '../Components/HotJobs.jsx';
 import axios from 'axios';
 
-const jobsPromise = axios.get(`https://career-dev-clienttt.vercel.app/jobs`)
+const jobsPromise = axios.get(`https://career-dev-server.vercel.app/jobs`)
     .then(res => res.data)
 const Home = () => {
     return (

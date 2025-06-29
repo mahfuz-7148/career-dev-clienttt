@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 const fetchJobDetails = async (id) => {
-    const res = await axios.get(`https://career-dev-clienttt.vercel.app/jobs/${id}`);
+    const res = await axios.get(`https://career-dev-server.vercel.app/jobs/${id}`);
     return res.data;
 };
 
