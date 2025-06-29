@@ -7,9 +7,9 @@ import axios from 'axios';
 const applicationPromise = (email, accessToken) => {
     return axios.get(`https://career-dev-server.vercel.app/applications?email=${email}`, {
         withCredentials: true,
-        headers: {
-            authorization: `Bearer ${accessToken}`
-        }
+        // headers: {
+        //     authorization: `Bearer ${accessToken}`
+        // }
     }).then(res => res.data)
 }
 
