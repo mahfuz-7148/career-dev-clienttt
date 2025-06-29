@@ -2,26 +2,22 @@ import React, {Suspense, use} from 'react';
 import {AuthCotext} from '../Contexts/AuthProvider.jsx';
 import ApplicationStats from './ApplicationStats.jsx';
 import ApplicationList from './ApplicationList.jsx';
-import axios from 'axios';
-
-const applicationPromise = (email, accessToken) => {
-    return axios.get(`https://career-dev-server.vercel.app/applications?email=${email}`, {
-        headers: {
-            authorization: `Bearer ${accessToken}`
-        }
-    }).then(res => res.data)
-}
+import useAxiosSecure from '../Hooks/useAxiosSecure.jsx';
 
 const MyApplications = () => {
+    const axiosSecure = useAxiosSecure()
+    const applicationPromise = email => {
+        return axiosSecure.get(`/applications?email=${email}`).then(res => res.data)
+    }
 
     const {saveUser} = use(AuthCotext)
-    console.log(saveUser.accessToken)
+    // console.log(saveUser.accessToken)
     return (
         <div>
             <ApplicationStats />
 
             <Suspense fallback={'loadinggggggg...'}>
-                <ApplicationList applicationPromise={applicationPromise(saveUser?.email, saveUser?.accessToken)}/>
+                <ApplicationList applicationPromise={applicationPromise(saveUser?.email)}/>
             </Suspense>
 
         </div>

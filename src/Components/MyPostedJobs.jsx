@@ -1,16 +1,14 @@
 import React, {Suspense, use} from 'react';
 import {AuthCotext} from '../Contexts/AuthProvider.jsx';
-import axios from 'axios';
 import JobLists from './JobLists.jsx';
-
-
-const jobsPromise = email => {
-    return axios.get(`https://career-dev-server.vercel.app/jobs/applications?email=${email}`)
-        .then(res => res.data)
-}
+import useAxiosSecure from '../Hooks/useAxiosSecure.jsx';
 
 const MyPostedJobs = () => {
     const {saveUser} = use(AuthCotext)
+    const axiosSecure = useAxiosSecure()
+    const jobsPromise = email => {
+        return axiosSecure.get(`/jobs/applications?email=${email}`).then(res => res.data)
+    }
     return (
         <div>
             <h2>My posted Jobs: </h2>

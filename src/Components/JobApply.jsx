@@ -24,7 +24,7 @@ const JobApply = () => {
             resume
         }
 
-        axios.post(`https://career-dev-server.vercel.app/applications/`, application)
+        axios.post(`http://localhost:3000/applications/`, application)
             .then(res => {
                 console.log(res.data)
 
