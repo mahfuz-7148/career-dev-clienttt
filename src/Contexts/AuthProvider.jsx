@@ -30,15 +30,15 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setSaveUser(currentUser)
             setLoading(false)
-            if (currentUser?.email) {
-                axios.post(`https://career-dev-server.vercel.app/jwt`, {
-                    email: currentUser?.email
-                },{withCredentials: true})
-                    .then(res => console.log(res?.data)
-                    )
-                    .catch(err => console.log(err)
-                    )
-            }
+            // if (currentUser?.email) {
+            //     axios.post(`https://career-dev-server.vercel.app/jwt`, {
+            //         email: currentUser?.email
+            //     },{withCredentials: true})
+            //         .then(res => console.log(res?.data)
+            //         )
+            //         .catch(err => console.log(err)
+            //         )
+            // }
             console.log(currentUser)
 
         })
