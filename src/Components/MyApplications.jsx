@@ -5,7 +5,7 @@ import ApplicationList from './ApplicationList.jsx';
 import axios from 'axios';
 
 const applicationPromise = (email, accessToken) => {
-    return axios.get(`http://localhost:3000/applications?email=${email}`, {
+    return axios.get(`https://career-dev-clienttt.vercel.app/applications?email=${email}`, {
         withCredentials: true,
         headers: {
             authorization: `Bearer ${accessToken}`

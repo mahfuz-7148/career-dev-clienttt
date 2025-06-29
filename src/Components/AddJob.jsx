@@ -20,7 +20,7 @@ const AddJob = () => {
 
         console.log(newJob)
 
-        axios.post(`http://localhost:3000/jobs`, newJob)
+        axios.post(`https://career-dev-clienttt.vercel.app/jobs`, newJob)
             .then(res => {
                 console.log(res.data)
 

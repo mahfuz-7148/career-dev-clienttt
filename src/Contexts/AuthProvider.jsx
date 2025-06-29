@@ -31,7 +31,7 @@ const AuthProvider = ({children}) => {
             setSaveUser(currentUser)
             setLoading(false)
             if (currentUser?.email) {
-                axios.post(`http://localhost:3000/jwt`, {
+                axios.post(`https://career-dev-clienttt.vercel.app/jwt`, {
                     email: currentUser?.email
                 },{withCredentials: true})
                     .then(res => console.log(res?.data)
