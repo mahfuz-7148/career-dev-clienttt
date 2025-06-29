@@ -4,12 +4,11 @@ import ApplicationStats from './ApplicationStats.jsx';
 import ApplicationList from './ApplicationList.jsx';
 import axios from 'axios';
 
-const applicationPromise = (email) => {
+const applicationPromise = (email, accessToken) => {
     return axios.get(`https://career-dev-server.vercel.app/applications?email=${email}`, {
-        // withCredentials: true,
-        // headers: {
-        //     authorization: `Bearer ${accessToken}`
-        // }
+        headers: {
+            authorization: `Bearer ${accessToken}`
+        }
     }).then(res => res.data)
 }
 
@@ -22,7 +21,7 @@ const MyApplications = () => {
             <ApplicationStats />
 
             <Suspense fallback={'loadinggggggg...'}>
-                <ApplicationList applicationPromise={applicationPromise(saveUser?.email)}/>
+                <ApplicationList applicationPromise={applicationPromise(saveUser?.email, saveUser?.accessToken)}/>
             </Suspense>
 
         </div>
